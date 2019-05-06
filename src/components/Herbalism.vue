@@ -11,7 +11,7 @@
                 provisions?
                 <font-awesome-icon :icon="provisions ? 'check' : 'times'"></font-awesome-icon>
             </div>
-            <div v-for="(value, option) in biomes[selectedBiome]" class="option-select" :class="biomes[selectedBiome] ? 'select-true' : 'select-false'" @click="biomes[selectedBiome][option] = !value">
+            <div v-for="(value, option) in biomes[selectedBiome]" class="option-select" :class="value ? 'select-true' : 'select-false'" @click="biomes[selectedBiome][option] = !value">
                 {{option + '?'}}
                 <font-awesome-icon :icon="value ? 'check' : 'times'"></font-awesome-icon>
             </div>
