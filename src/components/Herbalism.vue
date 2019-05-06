@@ -1,10 +1,22 @@
 <template>
     <div class="container">
+        <h2>Biome</h2>
         <div id="biomeButtons">
-            <div v-for="biome in biomes" :id="biome" class="biome" :class="selectedBiome === biome ? 'select' : ''" @click="selectedBiome = biome">{{biome}}</div>
+            <div v-for="(_, biome) in biomes" :id="biome" class="biome" :class="selectedBiome === biome ? 'select' : ''" @click="selectBiome(biome)">{{biome}}</div>
         </div>
+
+        <h2>Options</h2>
         <div id="options">
+            <div class="option-select" :class="provisions ? 'select-true' : 'select-false'">
+                provisions?
+                {{provisions}}
+            </div>
+            <div v-for="(value, option) in biomes[selectedBiome]" class="option-select" :class="options[option] ? 'select-true' : 'select-false'">
+                {{option + '?'}}
+                {{value}}
+            </div>
         </div>
+
         <button id="herbButton" @click="findPlants">Find plants</button>
         <div id="plants_found">
 
@@ -16,25 +28,39 @@
     export default {
         data() {
             return {
-                biomes: [
-                    'arctic',
-                    'desert',
-                    'grassland',
-                    'coastal',
-                    'forest',
-                    'hill',
-                    'mountain',
-                    'swamp',
-                ],
-                plants_found: [],
-                selectedBiome: 'arctic',
-                options: []
+                biomes: {
+                    arctic: {},
+                    desert: {},
+                    grassland: {},
+                    coastal: {
+                        underwater: false
+                    },
+                    forest: {
+                        night: false
+                    },
+                    hill: {},
+                    mountain: {
+                        cave: false
+                    },
+                    swamp: {
+                        rain: false
+                    },
+                },
+                provisions: false,
+                plantsFound: [],
+                selectedBiome: 'forest',
+                options: {}
             }
         },
 
         methods: {
             findPlants() {
                 console.log(this)
+            },
+
+            selectBiome(biome) {
+                this.selectedBiome = biome
+                this.options = this.biomes[biome]
             }
         },
 
@@ -98,6 +124,10 @@
 
     .select {
         border: #a87826 solid 5px;
+    }
+
+    #options {
+        width:100%
     }
 
     #arctic {

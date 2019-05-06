@@ -10,9 +10,9 @@
             <router-link class="nav-item" to="/mythic">
                 <span class="nav-link home">Game Master Emulator</span>
             </router-link>
-<!--            <router-link class="nav-item" to="/herbalism">-->
-<!--                <span class="nav-link home">Herbalism Generator</span>-->
-<!--            </router-link>-->
+            <router-link class="nav-item" to="/herbalism">
+                <span class="nav-link home">Herbalism Generator</span>
+            </router-link>
 <!--            <router-link class="nav-item" to="/npc">-->
 <!--                <span class="nav-link home">NPC Generator</span>-->
 <!--            </router-link>-->

@@ -65,7 +65,7 @@ export default {
             ingredient: 'hydrathistle',
         },
         3: {
-            additional_rule: 'water',
+            additional_rule: 'underwater',
             ingredient: 'amanita_cap'
         },
         4: 'hyancinth_nectar',
@@ -77,11 +77,11 @@ export default {
         7: 'common_ingredient',
         8: 'common_ingredient',
         9: {
-            additional_rule: 'water',
+            additional_rule: 'underwater',
             ingredient: 'lavender_sprig'
         },
         10: {
-            additional_rule: 'water',
+            additional_rule: 'underwater',
             ingredient: 'blue_toadshade'
         },
         11: 'wrackwort_bulbs',
@@ -156,7 +156,7 @@ export default {
         7: 'common_ingredient',
         8: 'common_ingredient',
         9: {
-            additional_rule: 'cave',
+            additional_rule: 'double',
             ingredient: 'blue_toadshade'
         },
         10: 'wrackwort_bulb',
