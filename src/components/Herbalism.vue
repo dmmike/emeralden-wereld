@@ -7,18 +7,18 @@
 
         <h2>Options</h2>
         <div id="options">
-            <div class="option-select" :class="provisions ? 'select-true' : 'select-false'">
+            <div class="option-select" :class="provisions ? 'select-true' : 'select-false'" @click="provisions = !provisions">
                 provisions?
-                {{provisions}}
+                <font-awesome-icon :icon="provisions ? 'check' : 'times'"></font-awesome-icon>
             </div>
-            <div v-for="(value, option) in biomes[selectedBiome]" class="option-select" :class="options[option] ? 'select-true' : 'select-false'">
+            <div v-for="(value, option) in options" class="option-select" :class="options[option] ? 'select-true' : 'select-false'" @click="options[option] = !options[option]">
                 {{option + '?'}}
-                {{value}}
+                <font-awesome-icon :icon="options[option] ? 'check' : 'times'"></font-awesome-icon>
             </div>
         </div>
 
         <button id="herbButton" @click="findPlants">Find plants</button>
-        <div id="plants_found">
+        <div id="plantsFound">
 
         </div>
     </div>
@@ -49,7 +49,9 @@
                 provisions: false,
                 plantsFound: [],
                 selectedBiome: 'forest',
-                options: {}
+                options: {
+                    night: false
+                }
             }
         },
 
