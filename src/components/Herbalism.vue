@@ -2,7 +2,7 @@
     <div class="container">
         <h2>Biome</h2>
         <div id="biomeButtons">
-            <div v-for="(_, biome) in biomes" :id="biome" class="biome" :class="selectedBiome === biome ? 'select' : ''" @click="selectBiome(biome)">{{biome}}</div>
+            <div v-for="(_, biome) in biomes" :id="biome" class="biome" :class="selectedBiome === biome ? 'select' : ''" @click="selectedBiome = biome">{{biome}}</div>
         </div>
 
         <h2>Options</h2>
@@ -11,9 +11,9 @@
                 provisions?
                 <font-awesome-icon :icon="provisions ? 'check' : 'times'"></font-awesome-icon>
             </div>
-            <div v-for="(value, option) in options" class="option-select" :class="options[option] ? 'select-true' : 'select-false'" @click="options[option] = !options[option]">
+            <div v-for="(_, option) in biomes[selectedBiome]" class="option-select" :class="biomes[selectedBiome] ? 'select-true' : 'select-false'" @click="biomes[selectedBiome][option] = !biomes[selectedBiome][option]">
                 {{option + '?'}}
-                <font-awesome-icon :icon="options[option] ? 'check' : 'times'"></font-awesome-icon>
+                <font-awesome-icon :icon="biomes[selectedBiome][option] ? 'check' : 'times'"></font-awesome-icon>
             </div>
         </div>
 
@@ -49,21 +49,13 @@
                 provisions: false,
                 plantsFound: [],
                 selectedBiome: 'forest',
-                options: {
-                    night: false
-                }
             }
         },
 
         methods: {
             findPlants() {
-                console.log(this)
+            //    Generate plants
             },
-
-            selectBiome(biome) {
-                this.selectedBiome = biome
-                this.options = this.biomes[biome]
-            }
         },
 
         computed: {},
