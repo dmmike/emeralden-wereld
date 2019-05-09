@@ -13,9 +13,9 @@
             <router-link class="nav-item" to="/herbalism" :class="$route.path === '/herbalism' ? 'current-page' : ''">
                 <span class="nav-link">Herbalism Generator</span>
             </router-link>
-<!--            <router-link class="nav-item" to="/npc" :class="$route.path === '/npc' ? 'current-page' : ''">-->
-<!--                <span class="nav-link">NPC Generator</span>-->
-<!--            </router-link>-->
+            <router-link class="nav-item" to="/npc" :class="$route.path === '/npc' ? 'current-page' : ''">
+                <span class="nav-link">NPC Generator</span>
+            </router-link>
 <!--            <router-link class="nav-item" to="/crit">-->
 <!--                <span class="nav-link home">Critical Hit Generator</span>-->
 <!--            </router-link>-->
