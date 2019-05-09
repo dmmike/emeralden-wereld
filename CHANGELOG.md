@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0
+- Add style to route if on route
+
 ## 0.2.1
 - Fix order of foudn herbs
 
