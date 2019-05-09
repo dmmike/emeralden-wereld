@@ -98,7 +98,7 @@
 
                 // Ugly workaround for the fact that Vue has problems noticing array changes
                 this.plantsTable = ''
-                Object.keys(this.plantsFound).forEach((ingredient) => {
+                Object.keys(this.plantsFound).sort().forEach((ingredient) => {
                     let plant = Herbs.descriptions[ingredient]
                     console.log(ingredient, plant)
                     this.plantsTable += "<tr><td style='text-align:left'>" + plant.name + "</td>" +

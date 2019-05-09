@@ -1,10 +1,10 @@
 # Changelog
 
+## 0.2.1
+- Fix order of foudn herbs
+
 ## 0.2.0
-- Additions:
-    Herbalism Generator
+- Herbalism Generator added
 
 ## 0.1.0
-- Additions:
-  - Base setup of project
-- Fixes:
+- Base setup of project
