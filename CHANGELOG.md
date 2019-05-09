@@ -1,5 +1,8 @@
 # Changelog
 
+## [Unreleased]
+- Fix Herbalism table column order and width
+
 ## 0.3.0
 - Add style to route if on route
 

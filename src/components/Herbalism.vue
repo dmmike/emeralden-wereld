@@ -29,20 +29,20 @@
         <div id="plantsTable">
             <table class="table table-striped">
                 <colgroup>
+                    <col width="5%">
                     <col width="12%">
                     <col width="8%">
                     <col width="auto%">
                     <col width="5%">
                     <col width="15%">
-                    <col width="5%">
                 </colgroup>
                 <thead>
-                <th style="text-align:left">Ingredient</th>
-                <th style="text-align:left">Rarity</th>
-                <th style="text-align:left">Description</th>
-                <th style="text-align:center">DC</th>
-                <th style="text-align:left">Grows in...</th>
-                <th style="text-align:center"># Found</th>
+                    <th style="text-align:center">Found</th>
+                    <th style="text-align:left">Ingredient</th>
+                    <th style="text-align:left">Rarity</th>
+                    <th style="text-align:left">Description</th>
+                    <th style="text-align:center">DC</th>
+                    <th style="text-align:left">Grows in...</th>
                 </thead>
                 <tbody v-html="plantsTable"></tbody>
             </table>
@@ -101,12 +101,12 @@
                 Object.keys(this.plantsFound).sort().forEach((ingredient) => {
                     let plant = Herbs.descriptions[ingredient]
                     console.log(ingredient, plant)
-                    this.plantsTable += "<tr><td style='text-align:left'>" + plant.name + "</td>" +
+                    this.plantsTable += "<tr><td style='text-align:center'>" + this.plantsFound[ingredient] + "</td>" +
+                        "<td style='text-align:left'>" + plant.name + "</td>" +
                         "<td style='text-align:left'>" + plant.rarity + "</td>" +
                         "<td style='text-align:left'>" + plant.details + "</td>" +
                         "<td style='text-align:center'>" + plant.dc + "</td>" +
-                        "<td style='text-align:left'>" + plant.terrains + "</td>" +
-                        "<td style='text-align:center'>" + this.plantsFound[ingredient] + "</td>"
+                        "<td style='text-align:left'>" + plant.terrains + "</td></tr>"
                 })
 
                 console.log(this.plantsFound)
@@ -194,6 +194,9 @@
 </script>
 
 <style scoped>
+    .table {
+        width:100%;
+    }
     #plantsTable {
         width: 100%;
     }
