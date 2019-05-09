@@ -29,8 +29,8 @@
         <div id="plantsTable">
             <table class="table table-striped">
                 <colgroup>
-                    <col width="13%">
-                    <col width="7%">
+                    <col width="12%">
+                    <col width="8%">
                     <col width="auto%">
                     <col width="5%">
                     <col width="15%">

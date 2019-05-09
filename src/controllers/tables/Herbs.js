@@ -335,6 +335,7 @@ export default {
             'Wyrmtongue Petals',
             'Common',
             '<b>Toxin Effect:</b> 1d4 + Alchemy Modifier poison damage per round; target is <i>[poisoned]</i> for 1 minute, although it can attempt to save again at the end of its turn.',
+            '--',
             'Most Terrain'
         ),
         arrow_root: new Ingredient(
