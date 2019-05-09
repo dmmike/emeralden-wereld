@@ -53,7 +53,6 @@
 <script>
     import Herbs from '@/controllers/tables/Herbs'
     import DieRoller from "@/controllers/DieRoller"
-    import Vue from 'vue'
 
     export default {
         data() {
