@@ -27,6 +27,16 @@
         flex-wrap: wrap;
     }
 
+    h2 {
+        width:100%;
+        text-align:center;
+        text-transform: uppercase;
+        font-family: fantasy;
+        color: white;
+        text-shadow: -2px 0 2px black, 0 2px 2px black, 2px 0 2px black, 0 -2px 2px black;
+        font-size: 200%;
+    }
+
     * {
     }
 </style>
