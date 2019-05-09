@@ -4,6 +4,7 @@ import Dashboard from '@/components/Dashboard'
 import EncounterDistance from '@/components/EncounterDistance'
 import GameMasterEngine from "@/components/GameMasterEngine"
 import Herbalism from "@/components/Herbalism"
+import NpcGenerator from "@/components/NpcGenerator"
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
             path: '/herbalism',
             name: 'Herbalism',
             component: Herbalism
+        },
+        {
+            path: '/npc',
+            name: 'NpcGenerator',
+            component: NpcGenerator
         }
     ]
 })
