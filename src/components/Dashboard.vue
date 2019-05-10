@@ -152,7 +152,9 @@
 <script>
     export default {
         data() {
-            return {}
+            return {
+                //TODO: rassen lijst opbouwen obv
+            }
         }
     }
 </script>

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0
+- Critical Hit Generator added
+
 ## 0.4.0
 - Fix Herbalism table column order and width
 - Npc Generator added

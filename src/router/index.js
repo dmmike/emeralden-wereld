@@ -5,6 +5,7 @@ import EncounterDistance from '@/components/EncounterDistance'
 import GameMasterEngine from "@/components/GameMasterEngine"
 import Herbalism from "@/components/Herbalism"
 import NpcGenerator from "@/components/NpcGenerator"
+import CriticalGenerator from "@/components/CriticalGenerator"
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
             path: '/npc',
             name: 'NpcGenerator',
             component: NpcGenerator
+        },
+        {
+            path: '/crit',
+            name: 'CritGenerator',
+            component: CriticalGenerator
         }
     ]
 })

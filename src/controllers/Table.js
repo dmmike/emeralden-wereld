@@ -12,17 +12,22 @@ export default class Table {
         let rolledValue = ''
 
         let table = this.table
+        let lastValue = true
         Object.keys(table).reverse().forEach(function (target) {
-            if (rollResult <= parseInt(target)) {
+            if (lastValue && (rollResult >= parseInt(target))) {
                 rolledValue = table[target]
+            } else {
+                if (rollResult <= parseInt(target)) {
+                    rolledValue = table[target]
+                }
             }
+            lastValue = false
         })
 
         //TODO: parse result for integrated rolls/tables
         if (returnRoll) {
             return {roll: rollResult, result: rolledValue}
-        }
-        else {
+        } else {
             return rolledValue
         }
     }
