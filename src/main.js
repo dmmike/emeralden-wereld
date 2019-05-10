@@ -4,11 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {library} from "@fortawesome/fontawesome-svg-core"
-import {faCheck, faTimes} from "@fortawesome/free-solid-svg-icons"
+import {faCheck, faTimes, faRedo} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome"
 
 library.add(faCheck)
 library.add(faTimes)
+library.add(faRedo)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

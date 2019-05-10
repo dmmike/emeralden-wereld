@@ -1,9 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## 0.4.0
 - Fix Herbalism table column order and width
 - Npc Generator added
 - Races, Gender, Sexes, and Classes table controllers added
+- Fix Herbalism table results (typoes)
+- Add styling for tables 
 
 ## 0.3.0
 - Add style to route if on route

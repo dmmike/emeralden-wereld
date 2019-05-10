@@ -10,13 +10,20 @@
         <div id="options">
             <button id="herbButton" @click="findPlants()">Find plants</button>
 
-            <div class="option-select" :class="provisions ? 'select-true' : 'select-false'"
-                 @click="provisions = !provisions">
+            <div class="option-select"
+                 :class="provisions ? 'select-true' : 'select-false'"
+                 @click="provisions = !provisions"
+                 @mousedown.prevent
+            >
                 provisions?<br/>
                 <font-awesome-icon :icon="provisions ? 'check' : 'times'"></font-awesome-icon>
             </div>
-            <div v-for="(value, option) in biomes[selectedBiome]" class="option-select"
-                 :class="value ? 'select-true' : 'select-false'" @click="biomes[selectedBiome][option] = !value">
+            <div v-for="(value, option) in biomes[selectedBiome]"
+                 class="option-select"
+                 :class="value ? 'select-true' : 'select-false'"
+                 @click="biomes[selectedBiome][option] = !value"
+                 @mousedown.prevent
+            >
                 {{option + '?'}}<br/>
                 <font-awesome-icon :icon="value ? 'check' : 'times'"></font-awesome-icon>
             </div>
@@ -88,19 +95,16 @@
 
                 this.plantsFound = []
 
-                console.log('Generating ' + numberOfIngredients + ' ingredients')
                 let ingredientsGenerated = 0
                 while (ingredientsGenerated < numberOfIngredients) {
                     this.generateIngredient()
                     ingredientsGenerated++
                 }
-                console.log(Herbs.descriptions.wild_sageroot)
 
                 // Ugly workaround for the fact that Vue has problems noticing array changes
                 this.plantsTable = ''
                 Object.keys(this.plantsFound).sort().forEach((ingredient) => {
                     let plant = Herbs.descriptions[ingredient]
-                    console.log(ingredient, plant)
                     this.plantsTable += "<tr><td style='text-align:center'>" + this.plantsFound[ingredient] + "</td>" +
                         "<td style='text-align:left'>" + plant.name + "</td>" +
                         "<td style='text-align:left'>" + plant.rarity + "</td>" +
@@ -108,8 +112,6 @@
                         "<td style='text-align:center'>" + plant.dc + "</td>" +
                         "<td style='text-align:left'>" + plant.terrains + "</td></tr>"
                 })
-
-                console.log(this.plantsFound)
             },
             generateIngredient(generateCommonIngredient = false) {
                 let rollResult
@@ -194,9 +196,7 @@
 </script>
 
 <style scoped>
-    .table {
-        width:100%;
-    }
+
     #plantsTable {
         width: 100%;
     }

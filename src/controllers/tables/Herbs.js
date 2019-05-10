@@ -54,11 +54,11 @@ export default {
         8: 'common_ingredient',
         9: {
             additional_rule: 'double',
-            ingredient: 'scilia_beans'
+            ingredient: 'scillia_beans'
         },
         10: 'cactus_juice',
         11: 'tail_leaf',
-        12: 'hyacinth_nectar',
+        12: 'hyancinth_nectar',
     }, '2d6'),
     coastal: new Table({
         2: {
@@ -124,7 +124,7 @@ export default {
         12: 'harrada_leaf',
     }, '2d6'),
     mountain: new Table({
-        2: 'basilisks_breath',
+        2: 'basilisk_breath',
         3: {
             additional_rule: 'double',
             ingredient: 'frozen_seedlings'
