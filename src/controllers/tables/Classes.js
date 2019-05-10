@@ -1,0 +1,26 @@
+import Table from "@/controllers/Table"
+
+export default new Table({
+    4: 'Artificer',
+    11: 'Barbarian',
+    15: 'Bard',
+    19: 'Blood Hunter',
+    24: 'Cleric',
+    28: 'Dragon Knight',
+    32: 'Druid',
+    41: 'Fighter',
+    45: 'Lacer',
+    49: 'Monk',
+    53: 'Mystic',
+    57: 'Paladin',
+    63: 'Pugilist',
+    68: 'Ranger',
+    74: 'Rogue',
+    78: 'Samsari',
+    82: 'Scholar',
+    86: 'Shaman',
+    90: 'Sorcerer',
+    92: 'Truespeaker',
+    97: 'Warlock',
+    100: 'Wizard',
+})
