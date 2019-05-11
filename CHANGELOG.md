@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.1
+- Fix crit inline roll
+
 ## 0.5.0
 - Critical Hit Generator added
 - Arrow recovery added
