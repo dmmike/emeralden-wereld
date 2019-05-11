@@ -35,7 +35,7 @@ export default {
                 healing: 'Level 6+ healing spells',
             },
             50: {
-                effect: 'You lose ' + DieRoller.d6() + ' teeth.',
+                effect: 'You lose 1d6 teeth.',
                 healing: 'Regenerate',
             },
             70: {
