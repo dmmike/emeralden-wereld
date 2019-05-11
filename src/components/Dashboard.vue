@@ -50,58 +50,16 @@
                         </li>
                     </ul>
                 </li>
+                <li><a href="https://emeraldenwereld.obsidianportal.com/wikis/main-page">Wiki</a></li>
                 <li>
                     <a href="http://www.fantasynamegenerators.com/" target="_blank">Fantasy Name Generators</a>
                     <ul>
                         <li>Rassen</li>
                         <ul class="sublist">
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-gnome-names.php"
-                                   target="_blank">Anthran</a>
-                            </li>
-                            <li>
-                                <a href="https://www.fantasynamegenerators.com/warhammer-wood-elf-names.php"
-                                   target="_blank">Entings</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-firbolg-names.php"
-                                   target="_blank">Firbolg</a>
-                            </li>
-                            <li>
-                                <a href="https://www.fantasynamegenerators.com/warhammer-lizardmen-names.php"
-                                   target="_blank">Lizardfolk</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-kobold-names.php"
-                                   target="_blank">Loggarts</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-human-names.php"
-                                   target="_blank">Mensen</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-minotaur-names.php" target="_blank">Minotaur</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-eladrin-names.php" target="_blank">Morphensi</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-shardmind-names.php" target="_blank">Shardmind</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-aarakocra-names.php" target="_blank">Syrinx</a>
-                            </li>
-                            <li>
-                                <a href="http://www.fantasynamegenerators.com/dnd-tabaxi-names.php"
-                                   target="_blank">Tabaxi</a>
-                            </li>
-                            <li>
-                                <a href="https://www.fantasynamegenerators.com/mtg-troll-names.php"
-                                   target="_blank">Trollkin</a>
-                            </li>
-                            <li>
-                                <a href="https://www.fantasynamegenerators.com/starfinder-shirren-names.php"
-                                   target="_blank">Trox</a>
+                            <li v-for="race in racesTable">
+                                <a :href="'http://www.fantasynamegenerators.com/' + race.urls.name_generator + '.php'" target="_blank" >
+                                    {{race.species}}
+                                </a>
                             </li>
                         </ul>
                         <li>Plekken</li>
@@ -144,16 +102,39 @@
             </ul>
         </div>
         <div class='dashboard-half'>
+            <div id="arrows">
+                <label>
+                    Arrows fired
+                    <input v-model.number="arrowsFired">
+                    <button @click="recoverArrows">Recover</button>
+                </label>
+                <br/>
+                Arrows recovered: {{arrowsRecovered}}
+            </div>
 <!--            TODO: Perception checker toevoegen -->
         </div>
     </div>
 </template>
 
 <script>
+    import Races from "@/controllers/tables/Races"
+    import DieRoller from "@/controllers/DieRoller"
+
     export default {
         data() {
             return {
-                //TODO: rassen lijst opbouwen obv
+                racesTable: Races.table,
+                arrowsFired: 0,
+                arrowsRecovered: 0
+            }
+        },
+        methods: {
+            recoverArrows() {
+                this.arrowsRecovered = 0
+                for (let i = 0; i < this.arrowsFired; i++) {
+                    if (DieRoller.rollDie(2) === 2) this.arrowsRecovered++
+                }
+                console.log(this.arrowsRecovered)
             }
         }
     }

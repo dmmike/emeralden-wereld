@@ -2,6 +2,7 @@
 
 ## 0.5.0
 - Critical Hit Generator added
+- Arrow recovery added
 
 ## 0.4.0
 - Fix Herbalism table column order and width
