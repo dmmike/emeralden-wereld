@@ -2,9 +2,9 @@ import Table from "@/controllers/Table"
 
 export default {
     standard: new Table({
-        60: 'straight',
-        85: 'gay',
-        93: 'bi',
+        70: 'straight',
+        88: 'gay',
+        96: 'bi',
         100: 'other',
     }),
     non_reproductive: new Table({
@@ -18,9 +18,9 @@ export default {
         100: 'other',
     }),
     fluid: new Table({
-        20: 'straight',
-        40: 'bi',
-        60: 'gay',
+        40: 'straight',
+        70: 'bi',
+        85: 'gay',
         100: 'other',
     })
 }

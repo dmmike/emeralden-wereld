@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.2
+- Change gender curves
+
 ## 0.5.1
 - Fix crit inline roll
 
