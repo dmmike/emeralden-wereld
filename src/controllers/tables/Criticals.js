@@ -92,7 +92,7 @@ export default {
                 healing: 'Regenerate',
             },
             110: {
-                effect: 'You lose your arm. Unless you receive healing before the start of your next turn, you drop to 0 hit points as you bleed out.',
+                effect: 'You lose your arm. Unlesss you receive healing before the start of your next turn, you drop to 0 hit points as you bleed out.',
                 healing: 'Regenerate',
             }
         }),
