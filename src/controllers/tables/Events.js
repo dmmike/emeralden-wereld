@@ -10,7 +10,7 @@ export default {
         55: "Close a thread",
         67: "PC negative",
         75: "PC positive",
-        83: "Ambuguous event",
+        83: "Ambiguous event",
         92: "NPC negative",
         100: "NPC positive"
     }),
