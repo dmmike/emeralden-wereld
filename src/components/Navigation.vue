@@ -19,6 +19,9 @@
             <router-link class="nav-item" to="/crit" :class="$route.path === '/crit' ? 'current-page' : ''">
                 <span class="nav-link home">Critical Hit Generator</span>
             </router-link>
+          <router-link class="nav-item" to="/aos" :class="$route.path === '/aos' ? 'current-page' : ''">
+            <span class="nav-link home">Katakros</span>
+          </router-link>
         </div>
     </div>
 </template>

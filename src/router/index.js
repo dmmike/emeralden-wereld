@@ -6,6 +6,7 @@ import GameMasterEngine from "@/components/GameMasterEngine"
 import Herbalism from "@/components/Herbalism"
 import NpcGenerator from "@/components/NpcGenerator"
 import CriticalGenerator from "@/components/CriticalGenerator"
+import AgeOfSigmar from "@/components/AgeOfSigmar";
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
             path: '/crit',
             name: 'CritGenerator',
             component: CriticalGenerator
+        },
+        {
+          path: '/aos',
+          name: 'AgeOfSigmar',
+          component: AgeOfSigmar
         }
     ]
 })
