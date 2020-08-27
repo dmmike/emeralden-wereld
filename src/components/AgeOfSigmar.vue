@@ -126,7 +126,7 @@
         woundBreakpoints: [
           {breakpoint: 1, dead: [], inda: 1, shield: false},
           {breakpoint: 3, dead: ['scrollbearer'], inda: 1, shield: false},
-          {breakpoint: 8, dead: ['scrollbearer', 'necrophos'], inda: 2, shield: false},
+          {breakpoint: 7, dead: ['scrollbearer', 'necrophos'], inda: 2, shield: false},
           {breakpoint: 12, dead: ['scrollbearer', 'necrophos', 'aviarch'], inda: 2, shield: false},
           {breakpoint: 20, dead: ['scrollbearer', 'necrophos', 'aviarch', 'liege'], inda: 4, shield: true},
         ]
