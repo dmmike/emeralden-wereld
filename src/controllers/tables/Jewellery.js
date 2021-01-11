@@ -1,0 +1,26 @@
+import Table from "../Table";
+
+export default new Table({
+  5: 'Amulet',
+  9: 'Armlet',
+  14: 'Bracelet',
+  18: 'Brooch',
+  22: 'Chain',
+  25: 'Choker',
+  29: 'Circlet',
+  33: 'Cuff Links',
+  42: 'Earrings',
+  46: 'Hairpin',
+  50: 'Hatpin',
+  55: 'Locket',
+  60: 'Medallion',
+  65: 'Necklace',
+  69: 'Pendant',
+  73: 'Pocket Watch',
+  77: 'Prayer Beads',
+  82: 'Ring, Decorative',
+  86: 'Ring, Promise',
+  90: 'Ring, Wedding',
+  95: 'Signet Ring',
+  100: 'Toc',
+})

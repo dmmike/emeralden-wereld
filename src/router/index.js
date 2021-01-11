@@ -7,6 +7,7 @@ import Herbalism from "@/components/Herbalism"
 import NpcGenerator from "@/components/NpcGenerator"
 import CriticalGenerator from "@/components/CriticalGenerator"
 import AgeOfSigmar from "@/components/AgeOfSigmar";
+import WHFRPLoot from "../components/WHFRPLoot";
 
 Vue.use(Router)
 
@@ -43,9 +44,14 @@ export default new Router({
             component: CriticalGenerator
         },
         {
+          path: '/wfloot',
+          name: 'WHFRPLoot',
+          component: WHFRPLoot
+        },
+        {
           path: '/aos',
           name: 'AgeOfSigmar',
           component: AgeOfSigmar
-        }
+        },
     ]
 })
