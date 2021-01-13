@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-list">
+    <div class="menu-list" v-if="$route.path !== '/caesar'">
         <div class="navbar">
             <router-link class="nav-item home" to="/"  :class="$route.path === '/' ? 'current-page' : ''">
                 <p class="nav-link home">Dashboard</p>
