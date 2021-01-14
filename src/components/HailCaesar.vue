@@ -44,22 +44,24 @@
       <div class="column" id="unitRules" :set="rules=unit.specialList">
         <h3>Special</h3>
         <div v-if="!Object.keys(rules).length"><i>No special rules</i></div>
-        <div v-for="(rule, ruleName) in rules">
+        <div class="rule" v-for="(rule, ruleName) in rules" @click="toggleRule(ruleName)">
           <h4>{{ruleName}}</h4>
           <ul>
             <li v-for="bullet in rule.bullets">{{bullet}}</li>
           </ul>
-          <div v-html="rule.description"></div>
+          <div v-html="rule.description" v-if="rulesShown.includes(ruleName)"></div>
+          <div class="expand-collapse">click to {{rulesShown.includes(ruleName) ? 'collapse' : 'expand'}}</div>
         </div>
       </div>
       <div class="column" id="unitFormations" :set="formations=unit.formations">
         <h3>Formations</h3>
-        <div v-for="(formation, formationName) in formations">
+        <div class="rule" v-for="(formation, formationName) in formations" @click="toggleRule(formationName)">
           <h4>{{formationName}}</h4>
           <ul>
             <li v-for="bullet in formation.bullets">{{bullet}}</li>
           </ul>
-          <div v-html="formation.description"></div>
+          <div v-html="formation.description" v-if="rulesShown.includes(formationName)"></div>
+          <div class="expand-collapse">click to {{rulesShown.includes(formationName) ? 'collapse' : 'expand'}}</div>
         </div>
       </div>
     </div>
@@ -83,6 +85,8 @@ export default {
       },
       selectedArmy: 'Ancient Briton',
       selectedUnit: 0,
+
+      rulesShown: [],
     }
   },
   computed: {
@@ -90,6 +94,16 @@ export default {
       if (!this.selectedArmy) return [];
       else return this.armies[this.selectedArmy];
     },
+  },
+  methods: {
+    toggleRule(ruleName) {
+      if (this.rulesShown.includes(ruleName)) {
+        this.rulesShown.splice(this.rulesShown.findIndex(rule => rule === ruleName), 1);
+      }
+      else {
+        this.rulesShown.push(ruleName);
+      }
+    }
   }
 }
 </script>
@@ -174,5 +188,26 @@ h3 {
 
 .column {
   width: 45%;
+}
+
+.rule {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  background-color: rgba(123, 150, 120, 0.25);
+}
+
+.rule h4 {
+  margin-top:0;
+}
+
+.expand-collapse {
+  margin-top: 10px;
+  width: 100%;
+  text-align: right;
+  color: grey;
+  font-style: italic;
 }
 </style>
