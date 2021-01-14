@@ -52,6 +52,11 @@ export default new Router({
       path: '/caesar',
       name: 'HailCaesar',
       component: HailCaesar,
+    },
+    {
+      path: '/caesar/:index',
+      name: 'HailCaesarArmy',
+      component: HailCaesar
     }
   ]
 })

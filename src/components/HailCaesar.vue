@@ -95,6 +95,12 @@ export default {
       else return this.armies[this.selectedArmy];
     },
   },
+  mounted() {
+    let index = this.$route.params.index;
+    if (index && index <= (Object.keys(this.armies).length - 1)) {
+      this.selectedArmy = Object.keys(this.armies)[index];
+    }
+  },
   methods: {
     toggleRule(ruleName) {
       if (this.rulesShown.includes(ruleName)) {
