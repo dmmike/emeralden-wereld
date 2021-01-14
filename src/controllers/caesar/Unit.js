@@ -1,4 +1,4 @@
-import {RULE_TYPE_WEAPON, SPECIAL_RULES} from "./SpecialRules";
+import {RULE_TYPE_FORMATION, RULE_TYPE_WEAPON, SPECIAL_RULES} from "./SpecialRules";
 
 export const TROOP_TYPE_INFANTRY_SKIRMISHER = 10;
 export const TROOP_TYPE_INFANTRY_LIGHT      = 11;
@@ -20,12 +20,31 @@ export const TROOP_TYPE_CHARIOTS_HEAVY      = 43;
 
 export const TROOP_TYPE_ELEPHANTS           = 50;
 
-export const TROOP_TYPE_BAGGAGE              = 60;
+export const TROOP_TYPE_BAGGAGE             = 60;
 
 export const UNIT_SIZE_TINY     = 0;
 export const UNIT_SIZE_SMALL    = 1;
 export const UNIT_SIZE_STANDARD = 2;
 export const UNIT_SIZE_LARGE    = 3;
+
+const SPECIAL_RULES_FOR_TYPE = {
+  10: ['Column', 'Open Order', 'Evade',],
+  11: ['Battle Line', 'Column', 'Open Order', 'Square',],
+  12: ['Battle Line', 'Column', 'Open Order', 'Square',],
+  13: ['Battle Line', 'Column', 'Open Order', 'Square', 'Heavy Infantry'],
+  20: ['Column', 'Open Order', 'Evade',],
+  21: ['Battle Line', 'Column', 'Open Order', 'Evade', 'Countercharge', 'Turn to Face'],
+  22: ['Battle Line', 'Column', 'Open Order', 'Evade', 'Countercharge', 'Turn to Face'],
+  23: ['Battle Line', 'Column', 'Open Order', 'Evade', 'Countercharge', 'Turn to Face'],
+  24: ['Battle Line', 'Column', 'Open Order', 'Evade', 'Countercharge', 'Turn to Face', 'Cataphract'],
+  31: ['Battle Line', 'Column', 'Artillery'],
+  32: ['Battle Line', 'Column', 'Artillery'],
+  33: ['Battle Line', 'Column', 'Artillery'],
+  41: ['Battle Line', 'Column', 'Open Order', 'Evade', 'Countercharge',],
+  43: ['Battle Line', 'Column', 'Countercharge',],
+  50: ['Battle Line', 'Column', 'Turn to Face'],
+  60: [],
+}
 
 export class Unit {
   constructor(name, weapons, type, clash, sustained, short, long, morale, stamina, special, points, size = UNIT_SIZE_STANDARD) {
@@ -95,4 +114,35 @@ export class Unit {
   get specialRules() {
     return this.special.filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_WEAPON);
   }
+
+  get specialList() {
+    const specialRules = this.special
+      .concat(SPECIAL_RULES_FOR_TYPE[this.type])
+      .filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_FORMATION)
+      .sort();
+
+    let rulesByName = {};
+    specialRules.forEach(rule => rulesByName[rule] = SPECIAL_RULES[rule]);
+    return rulesByName;
+  }
+
+  get formations() {
+    let specialRules;
+
+    if (this.size === UNIT_SIZE_TINY) {
+      specialRules = ['Open Order', 'Column'];
+    }
+    else {
+      specialRules = this.special
+        .concat(SPECIAL_RULES_FOR_TYPE[this.type])
+        .filter(rule => SPECIAL_RULES[rule].type === RULE_TYPE_FORMATION);
+
+      if (specialRules.includes('Warband')) {
+        specialRules = specialRules.filter(formation => formation !== 'Battle Line')
+      }
+    }
+    specialRules.sort();
+    let formationsByName = {};
+    specialRules.forEach(rule => formationsByName[rule] = SPECIAL_RULES[rule]);
+    return formationsByName;  }
 }

@@ -8,10 +8,10 @@ import {
 } from "./Unit";
 
 export default [
-  new Unit('warband', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 9, 6, 2, 0, 5, 6, ['Wild Fighters'], 28),
+  new Unit('warband', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 9, 6, 2, 0, 5, 6, ['Warband', 'Wild Fighters'], 28),
   // TODO: Better way to deal with upgrades
-  // new Unit('warband', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 11, 8, 3, 0, 5, 8, ['Wild Fighters'], 35, UNIT_SIZE_LARGE),
-  new Unit('naked fanatics', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 9, 6, 2, 0, 5, 6, ['Wild Fighters', 'Fanatic', 'Frenzied Charge'], 32),
+  // new Unit('warband', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 11, 8, 3, 0, 5, 8, ['Warband', 'Wild Fighters'], 35, UNIT_SIZE_LARGE),
+  new Unit('naked fanatics', 'swords and javelins', TROOP_TYPE_INFANTRY_MEDIUM, 9, 6, 2, 0, 5, 6, ['Warband', 'Wild Fighters', 'Fanatic', 'Frenzied Charge'], 32),
 
   // new Unit(null, 'javelins', TROOP_TYPE_INFANTRY_SKIRMISHER, 3, 2, 2, 0, 0, 4, [], 11, UNIT_SIZE_SMALL),
   // new Unit(null, 'slings', TROOP_TYPE_INFANTRY_SKIRMISHER, 2, 2, 2, 2, 0, 4, ['Slings'], 12, UNIT_SIZE_SMALL),

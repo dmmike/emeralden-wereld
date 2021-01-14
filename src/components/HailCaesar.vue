@@ -40,8 +40,28 @@
       </table>
     </div>
     <h2>Unit Info</h2>
-    <div id="unitInfo">
-
+    <div id="unitInfo" :set="unit=units[selectedUnit]" v-if="units[selectedUnit]">
+      <div class="column" id="unitRules" :set="rules=unit.specialList">
+        <h3>Special</h3>
+        <div v-if="!Object.keys(rules).length"><i>No special rules</i></div>
+        <div v-for="(rule, ruleName) in rules">
+          <h4>{{ruleName}}</h4>
+          <ul>
+            <li v-for="bullet in rule.bullets">{{bullet}}</li>
+          </ul>
+          <div v-html="rule.description"></div>
+        </div>
+      </div>
+      <div class="column" id="unitFormations" :set="formations=unit.formations">
+        <h3>Formations</h3>
+        <div v-for="(formation, formationName) in formations">
+          <h4>{{formationName}}</h4>
+          <ul>
+            <li v-for="bullet in formation.bullets">{{bullet}}</li>
+          </ul>
+          <div v-html="formation.description"></div>
+        </div>
+      </div>
     </div>
     <div id="generalRules">
 
@@ -62,14 +82,14 @@ export default {
         'Imperial Roman': ImperialRoman,
       },
       selectedArmy: 'Ancient Briton',
-      selectedUnit: null,
+      selectedUnit: 0,
     }
   },
   computed: {
     units() {
       if (!this.selectedArmy) return [];
       else return this.armies[this.selectedArmy];
-    }
+    },
   }
 }
 </script>
@@ -134,5 +154,25 @@ export default {
 
 .clickable {
   cursor: pointer;
+}
+
+h3 {
+  width:100%;
+  text-align:center;
+  text-transform: uppercase;
+  font-family: fantasy;
+  color: white;
+  text-shadow: -2px 0 2px black, 0 2px 2px black, 2px 0 2px black, 0 -2px 2px black;
+}
+
+#unitInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+}
+
+.column {
+  width: 45%;
 }
 </style>
