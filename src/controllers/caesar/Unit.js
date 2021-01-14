@@ -118,7 +118,7 @@ export class Unit {
   get specialList() {
     const specialRules = this.special
       .concat(SPECIAL_RULES_FOR_TYPE[this.type])
-      .filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_FORMATION)
+      .filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_FORMATION && !SPECIAL_RULES[rule].hide)
       .sort();
 
     let rulesByName = {};

@@ -154,6 +154,7 @@ export const SPECIAL_RULES = {
   },
   'Warband': {
     type: RULE_TYPE_FORMATION,
+    hide: true,
     bullets: [
       'Light infantry cannot normally form open order',
       'Standard formation'
