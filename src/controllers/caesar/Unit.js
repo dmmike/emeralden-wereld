@@ -112,13 +112,13 @@ export class Unit {
   }
 
   get specialRules() {
-    return this.special.filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_WEAPON);
+    return this.special.filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_WEAPON && !SPECIAL_RULES[rule].hide);
   }
 
   get specialList() {
     const specialRules = this.special
       .concat(SPECIAL_RULES_FOR_TYPE[this.type])
-      .filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_FORMATION && !SPECIAL_RULES[rule].hide)
+      .filter(rule => SPECIAL_RULES[rule].type !== RULE_TYPE_FORMATION)
       .sort();
 
     let rulesByName = {};
