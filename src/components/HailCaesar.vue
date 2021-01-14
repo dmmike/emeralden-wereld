@@ -25,7 +25,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(unit, index) in units" :key="index" @click="selectedUnit=index" class="clickable">
+        <tr v-for="(unit, index) in units" :key="index" @click="selectedUnit=index" class="clickable unitRow" :class="{selectedUnit: selectedUnit === index}">
           <td class="unitName ta-left">{{unit.unitName}}</td>
           <td>{{unit.clash}}</td>
           <td>{{unit.sustained}}</td>
@@ -154,6 +154,7 @@ export default {
 
 #armyUnits table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 #armyUnits table th, #armyUnits table td {
@@ -215,5 +216,10 @@ h3 {
   text-align: right;
   color: grey;
   font-style: italic;
+}
+
+.selectedUnit {
+  background-color: rgba(16, 96, 99, 0.25);
+  border: 2px solid rgb(16, 96, 99);
 }
 </style>
